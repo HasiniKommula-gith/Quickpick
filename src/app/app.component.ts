@@ -11,7 +11,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ProductsComponent,RouterModule,RouterOutlet],
+  imports: [RouterModule,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 

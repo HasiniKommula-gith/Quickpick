@@ -8,7 +8,7 @@ import { StockHighlightDirective } from '../StockHighlightDirective.directive';
 
 @Component({
   selector: 'app-product-card',
-  imports: [FormsModule,CommonModule,StockHighlightDirective],
+  imports: [FormsModule,CommonModule],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })
