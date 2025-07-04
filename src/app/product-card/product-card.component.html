@@ -1,0 +1,14 @@
+<div class="product-card" appZoom>
+  <img [src]="product?.images?.[0]" alt="{{ product?.title }}" class="product-image">
+  <h3>{{ product?.title }}</h3>
+  <p class="product-price">${{ product?.price }}</p>
+ <p class="product-description">
+  {{ showFullDescription ? product?.description : getDisplayDescription() }}
+  <button class="toggle-description" (click)="toggleDescription()">
+    {{ showFullDescription ? 'Show Less' : 'Show More' }}
+  </button>
+</p>
+ <p class="product-stock" StockHighlightDirective>Items Left: {{ product?.stock }}</p> 
+  <button class="add-to-cart" (click)="onAddToCart()">Add to Cart</button>
+  
+</div>

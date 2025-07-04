@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>QuickPick</h1>
+  <div class="filters">
+    <div class="filter-group">
+      <label for="filter">Filter by Availability:</label>
+      <select id="filter" [(ngModel)]="filterStatus" (ngModelChange)="onFilterChange($event)">
+        <option value="All">All</option>
+        <option value="In Stock">In Stock</option>
+        <option value="Low Stock">Out of Stock</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <input type="text" placeholder="Search by name or brand..." [(ngModel)]="searchQuery" (ngModelChange)="onSearchChange()">
+    </div>
+    <button class="cart-toggle" (click)="toggleCart()">My Cart ({{ cartItems.length }})</button>
+  </div>
+  <app-cart *ngIf="showCart" [cartItems]="cartItems"></app-cart>
+  <div class="product-grid">
+    <app-product-card
+  *ngFor="let product of filteredProducts"
+  [product]="product"
+  (addToCart)="addToCart($event)"
+  >
+  </app-product-card>
+
+  </div>
+</div>
